@@ -3,46 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>
-      Doctor Cars Australia – Premium Auto Detailing & Servicing | Launceston
-    </title>
+
+    <title>Doctor Cars Australia – Premium Auto Detailing & Servicing</title>
+
     <meta
       name="description"
-      content="Premium auto detailing, ceramic coatings, paint correction & servicing in South Launceston, TAS. Call 0439 348 847."
+      content="Premium auto detailing, ceramic coatings, paint correction & servicing in South Launceston, TAS."
     />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- ICONS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
+
   <body>
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <nav>
       <a href="#hero" class="nav-logo">
         <span class="cross"></span>
         Doctor Cars Australia
       </a>
-      
-      <button class="mobile-menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <ul class="nav-links">
-        <li><a href="#why">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="nav-cta mobile-only-cta">Book Now</a></li>
+        <li>
+          <a href="#why">About</a>
+        </li>
+
+        <li>
+          <a href="#services">Services</a>
+        </li>
+
+        <li>
+          <a href="#process">Process</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
+        <li>
+          <a href="#contact" class="nav-cta mobile-only-cta"> Book Now </a>
+        </li>
       </ul>
-      <a href="#contact" class="nav-cta desktop-only-cta">Book Now</a>
     </nav>
+
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section id="hero">
       <div class="hero-bg"></div>
+
+      <div class="floating-glow"></div>
 
       <p class="hero-tag reveal">South Launceston, TAS · Since 2024</p>
 
@@ -53,14 +85,34 @@
       </h1>
 
       <div class="hero-bottom">
-        <p class="hero-desc reveal reveal-delay-2">
-          Premium detailing, paint correction, ceramic coatings &amp; full
-          servicing — delivered with surgical precision by Doctor Cars
-          Australia.
-        </p>
-        <div class="hero-actions reveal reveal-delay-3">
-          <a href="#contact" class="btn-primary">Book a Service</a>
-          <a href="#services" class="btn-ghost">See All Services</a>
+        <div>
+          <p class="hero-desc reveal reveal-delay-2">
+            Premium detailing, ceramic coatings, paint correction & full
+            servicing — delivered with precision by Doctor Cars Australia.
+          </p>
+
+          <div class="trust-row reveal reveal-delay-3">
+            <div>
+              <i data-lucide="shield-check"></i>
+              Fully Insured
+            </div>
+
+            <div>
+              <i data-lucide="sparkles"></i>
+              Premium Products
+            </div>
+
+            <div>
+              <i data-lucide="star"></i>
+              5★ Rated
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions reveal reveal-delay-4">
+          <a href="#contact" class="btn-primary"> Book a Service </a>
+
+          <a href="#services" class="btn-ghost"> See All Services </a>
         </div>
       </div>
 
@@ -70,59 +122,68 @@
       </div>
     </section>
 
+    <!-- =========================
+         MARQUEE
+    ========================== -->
+
     <div class="marquee-wrap">
       <div class="marquee-track">
-        <span class="marquee-item">Paint Correction</span>
-        <span class="marquee-item">Ceramic Coating</span>
-        <span class="marquee-item">Interior Detailing</span>
-        <span class="marquee-item">Steam Cleaning</span>
-        <span class="marquee-item">Log Book Service</span>
-        <span class="marquee-item">Engine Bay Cleaning</span>
-        <span class="marquee-item">Headlight Restoration</span>
-        <span class="marquee-item">Leather Treatment</span>
-        <span class="marquee-item">Swirl Removal</span>
-        <span class="marquee-item">Window Nano Coating</span>
-        <span class="marquee-item">Paint Correction</span>
-        <span class="marquee-item">Ceramic Coating</span>
-        <span class="marquee-item">Interior Detailing</span>
-        <span class="marquee-item">Steam Cleaning</span>
-        <span class="marquee-item">Log Book Service</span>
-        <span class="marquee-item">Engine Bay Cleaning</span>
-        <span class="marquee-item">Headlight Restoration</span>
-        <span class="marquee-item">Leather Treatment</span>
-        <span class="marquee-item">Swirl Removal</span>
-        <span class="marquee-item">Window Nano Coating</span>
+        <span class="marquee-item"> Paint Correction </span>
+
+        <span class="marquee-item"> Ceramic Coating </span>
+
+        <span class="marquee-item"> Interior Detailing </span>
+
+        <span class="marquee-item"> Steam Cleaning </span>
+
+        <span class="marquee-item"> Log Book Service </span>
+
+        <span class="marquee-item"> Engine Bay Cleaning </span>
+
+        <span class="marquee-item"> Headlight Restoration </span>
+
+        <span class="marquee-item"> Leather Treatment </span>
+
+        <span class="marquee-item"> Window Nano Coating </span>
       </div>
     </div>
+
+    <!-- =========================
+         WHY SECTION
+    ========================== -->
 
     <section id="why">
       <div class="why-left">
         <p class="section-label reveal">Why Doctor Cars</p>
+
         <h2 class="section-title reveal reveal-delay-1">
-          We treat every car<br />like our <span class="outline">own.</span>
+          We treat every car<br />
+          like our <span class="outline">own.</span>
         </h2>
       </div>
+
       <div class="why-right reveal reveal-delay-2">
         <p>
           At Doctor Cars Australia, we combine professional-grade products with
-          genuine care for your vehicle. Whether it's a daily driver that needs
-          a refresh or a showpiece that deserves protection — our team delivers
-          results you can see and feel.
+          genuine care for your vehicle.
         </p>
+
         <p>
-          Located directly in front of the Door of Hope in South Launceston,
-          we're easy to find and ready to take on any job — from a quick
-          interior clean to a full ceramic coating package.
+          Whether it's a daily driver or a premium showpiece, we deliver results
+          you can see and feel.
         </p>
+
         <div class="stats-row">
           <div class="stat-item">
             <div class="stat-num">100%</div>
             <div class="stat-label">Satisfaction Focus</div>
           </div>
+
           <div class="stat-item">
             <div class="stat-num">10+</div>
             <div class="stat-label">Services Offered</div>
           </div>
+
           <div class="stat-item">
             <div class="stat-num">5★</div>
             <div class="stat-label">Community Rated</div>
@@ -131,226 +192,248 @@
       </div>
     </section>
 
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
     <section id="services">
       <div class="services-header">
         <div>
           <p class="section-label reveal">What We Do</p>
+
           <h2 class="section-title reveal reveal-delay-1">Our Services</h2>
         </div>
-        <a href="#contact" class="btn-primary reveal reveal-delay-2"
-          >Get a Quote</a
-        >
+
+        <a href="#contact" class="btn-primary reveal reveal-delay-2">
+          Get a Quote
+        </a>
       </div>
 
       <div class="services-grid">
+        <!-- 1 -->
+
         <div class="service-card reveal">
-          <div class="service-icon">✦</div>
-          <div class="service-name">Interior &amp; Exterior Detailing</div>
+          <div class="service-icon">
+            <i data-lucide="sparkles"></i>
+          </div>
+
+          <div class="service-name">Interior & Exterior Detailing</div>
+
           <p class="service-desc">
             Full steam clean, deep vacuum, antibacterial sanitisation for seats,
-            carpets, and all surfaces. Inside and out.
+            carpets and all surfaces.
           </p>
-          <span class="service-tag">Most Popular</span>
+
+          <span class="service-tag"> Most Popular </span>
         </div>
+
+        <!-- 2 -->
+
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">◈</div>
+          <div class="service-icon">
+            <i data-lucide="shield"></i>
+          </div>
+
           <div class="service-name">Ceramic Coating</div>
+
           <p class="service-desc">
-            Long-lasting UV protection with a high-gloss hydrophobic layer that
-            repels water, dirt, and contaminants.
+            Long-lasting UV protection with a high-gloss hydrophobic layer.
           </p>
-          <span class="service-tag">Premium</span>
+
+          <span class="service-tag"> Premium </span>
         </div>
+
+        <!-- 3 -->
+
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">◎</div>
+          <div class="service-icon">
+            <i data-lucide="paintbrush"></i>
+          </div>
+
           <div class="service-name">Paint Correction</div>
+
           <p class="service-desc">
-            Cut and polish, swirl mark removal, and minor scratch reduction to
-            restore your paint's original gloss.
+            Swirl mark removal and gloss restoration for tired paintwork.
           </p>
-          <span class="service-tag">Restoration</span>
+
+          <span class="service-tag"> Restoration </span>
         </div>
+
+        <!-- 4 -->
+
         <div class="service-card reveal reveal-delay-3">
-          <div class="service-icon">⟳</div>
-          <div class="service-name">Log Book &amp; General Service</div>
+          <div class="service-icon">
+            <i data-lucide="wrench"></i>
+          </div>
+
+          <div class="service-name">Log Book & General Service</div>
+
           <p class="service-desc">
-            Scheduled maintenance and general servicing to keep your vehicle
-            running reliably and on spec.
+            Reliable scheduled servicing to keep your vehicle healthy.
           </p>
-          <span class="service-tag">Mechanical</span>
+
+          <span class="service-tag"> Mechanical </span>
         </div>
+
+        <!-- 5 -->
+
         <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">◻</div>
+          <div class="service-icon">
+            <i data-lucide="lightbulb"></i>
+          </div>
+
           <div class="service-name">Headlight Restoration</div>
+
           <p class="service-desc">
-            Remove yellowing and haze from oxidised headlights to restore
-            clarity, brightness, and safety.
+            Restore clarity and improve visibility with professional polishing.
           </p>
-          <span class="service-tag">Clarity</span>
+
+          <span class="service-tag"> Clarity </span>
         </div>
+
+        <!-- 6 -->
+
         <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">▣</div>
+          <div class="service-icon">
+            <i data-lucide="cog"></i>
+          </div>
+
           <div class="service-name">Engine Bay Cleaning</div>
+
           <p class="service-desc">
-            Safe degreasing and detailed clean of the engine bay — making under
-            the bonnet look as good as the rest.
+            Safe degreasing and detailed engine bay restoration.
           </p>
-          <span class="service-tag">Detail</span>
-        </div>
-        <div class="service-card reveal">
-          <div class="service-icon">⬡</div>
-          <div class="service-name">Leather Treatment</div>
-          <p class="service-desc">
-            Conditioning and protection for leather seats to prevent cracking,
-            fading, and wear over time.
-          </p>
-          <span class="service-tag">Care</span>
-        </div>
-        <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">◇</div>
-          <div class="service-name">Windows &amp; Glass Nano Coating</div>
-          <p class="service-desc">
-            Hydrophobic glass treatment for improved visibility in rain and
-            reduced wiper dependence.
-          </p>
-          <span class="service-tag">Hydrophobic</span>
-        </div>
-        <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">✿</div>
-          <div class="service-name">Stain &amp; Odour Removal</div>
-          <p class="service-desc">
-            Targeted stain treatment and deep deodorising so your interior
-            smells and looks brand new.
-          </p>
-          <span class="service-tag">Interior</span>
+
+          <span class="service-tag"> Detail </span>
         </div>
       </div>
     </section>
+
+    <!-- =========================
+         PROCESS
+    ========================== -->
 
     <section id="process">
       <p class="section-label reveal">How It Works</p>
+
       <h2 class="section-title reveal reveal-delay-1">
-        Simple from<br />start to finish.
+        Simple from start to finish.
       </h2>
 
       <div class="process-grid">
-        <div class="process-step reveal reveal-delay-1">
+        <div class="process-step reveal">
           <div class="step-num">01</div>
+
           <div class="step-title">Get in Touch</div>
-          <p class="step-desc">
-            Call, WhatsApp, or fill out the form below. Tell us your car,
-            suburb, and what you need.
-          </p>
+
+          <p class="step-desc">Call, WhatsApp or fill out the contact form.</p>
         </div>
-        <div class="process-step reveal reveal-delay-2">
+
+        <div class="process-step reveal reveal-delay-1">
           <div class="step-num">02</div>
+
           <div class="step-title">Get a Quote</div>
+
           <p class="step-desc">
-            We'll recommend the right service for your vehicle and give you a
-            clear, honest price.
+            We recommend the best service for your vehicle.
           </p>
         </div>
-        <div class="process-step reveal reveal-delay-3">
+
+        <div class="process-step reveal reveal-delay-2">
           <div class="step-num">03</div>
+
           <div class="step-title">Book a Time</div>
-          <p class="step-desc">
-            Choose a day that suits you — Mon–Fri 8am–5pm, or Saturday by
-            appointment.
-          </p>
+
+          <p class="step-desc">Choose a time that works for you.</p>
         </div>
-        <div class="process-step reveal reveal-delay-4">
+
+        <div class="process-step reveal reveal-delay-3">
           <div class="step-num">04</div>
+
           <div class="step-title">Drive Away Happy</div>
-          <p class="step-desc">
-            Pick up a car that looks and feels brand new. No shortcuts, no
-            compromises.
-          </p>
+
+          <p class="step-desc">Enjoy a vehicle that feels brand new.</p>
         </div>
       </div>
     </section>
 
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
     <section id="contact">
       <div class="contact-wrap">
+        <!-- LEFT -->
+
         <div class="contact-left">
           <p class="section-label reveal">Get in Touch</p>
+
           <h2 class="section-title reveal reveal-delay-1">
-            Ready to book?<br />Let's talk.
+            Ready to book?<br />
+            Let's talk.
           </h2>
+
           <p class="reveal reveal-delay-2">
-            Drop us a message or give us a call. We respond fast and confirm
-            your appointment quickly.
+            Send us a message or give us a call. We respond quickly during
+            business hours.
           </p>
 
+          <!-- PHONE -->
+
           <div class="contact-detail reveal reveal-delay-2">
-            <div class="contact-detail-icon">📞</div>
+            <div class="contact-detail-icon">
+              <i data-lucide="phone"></i>
+            </div>
+
             <div class="contact-detail-text">
-              <strong>Phone / WhatsApp</strong>
-              <a href="tel:+61439348847">0439 348 847</a><br />
-              <a
-                href="tel:+61424578081"
-                style="color: rgba(255, 255, 255, 0.5); font-size: 0.85rem"
-                >0424 578 081</a
-              >
+              <strong> Phone / WhatsApp </strong>
+
+              <a href="tel:+61439348847"> 0439 348 847 </a>
             </div>
           </div>
 
-          <div class="contact-detail reveal reveal-delay-3">
-            <div class="contact-detail-icon">📍</div>
-            <div class="contact-detail-text">
-              <strong>Location</strong>
-              <span
-                >47 Glen Dhu St, South Launceston TAS 7249<br />
-                <span
-                  style="font-size: 0.82rem; color: rgba(255, 255, 255, 0.5)"
-                  >In front of the Door of Hope</span
-                ></span
-              >
-            </div>
-          </div>
+          <!-- LOCATION -->
 
           <div class="contact-detail reveal reveal-delay-3">
-            <div class="contact-detail-icon">🕒</div>
+            <div class="contact-detail-icon">
+              <i data-lucide="map-pin"></i>
+            </div>
+
             <div class="contact-detail-text">
-              <strong>Hours</strong>
+              <strong> Location </strong>
+
               <span>
-                Mon – Fri &nbsp;·&nbsp; 8:00 AM – 5:00 PM<br />
-                Sat – Sun &nbsp;·&nbsp; By Appointment
+                47 Glen Dhu St,<br />
+                South Launceston TAS 7249
               </span>
             </div>
           </div>
 
-          <div class="social-row reveal reveal-delay-4">
-            <a
-              href="https://www.facebook.com/p/Doctor-Cars-Australia-61560726973306/"
-              target="_blank"
-              class="social-btn"
-            >
-              Facebook
-            </a>
-            <a
-              href="https://www.instagram.com/doctorcarsaus/"
-              target="_blank"
-              class="social-btn"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://www.tiktok.com/@doctorcarsaustralia"
-              target="_blank"
-              class="social-btn"
-            >
-              TikTok
-            </a>
+          <!-- HOURS -->
+
+          <div class="contact-detail reveal reveal-delay-4">
+            <div class="contact-detail-icon">
+              <i data-lucide="clock-3"></i>
+            </div>
+
+            <div class="contact-detail-text">
+              <strong> Hours </strong>
+
+              <span> Mon – Fri · 8AM – 5PM </span>
+            </div>
           </div>
         </div>
+
+        <!-- FORM -->
 
         <div class="contact-form reveal reveal-delay-2">
           <p class="form-title">Request a Quote</p>
 
-          <form id="quoteForm" novalidate>
+          <form id="quoteForm">
             <div class="form-row">
               <div class="form-group">
-                <label for="fname">Your Name</label>
+                <label> Your Name </label>
+
                 <input
                   type="text"
                   id="fname"
@@ -358,8 +441,10 @@
                   required
                 />
               </div>
+
               <div class="form-group">
-                <label for="fphone">Phone Number</label>
+                <label> Phone Number </label>
+
                 <input
                   type="tel"
                   id="fphone"
@@ -370,117 +455,130 @@
             </div>
 
             <div class="form-group">
-              <label for="fservice">Service Required</label>
-              <div class="select-wrapper">
-                <select id="fservice" required>
-                  <option value="" disabled selected>Select a service…</option>
-                  <option>Interior &amp; Exterior Detailing</option>
-                  <option>Ceramic Coating</option>
-                  <option>Paint Correction (Cut &amp; Polish)</option>
-                  <option>Log Book Service</option>
-                  <option>General Service</option>
-                  <option>Headlight Restoration</option>
-                  <option>Leather Treatment</option>
-                  <option>Stain / Odour Removal</option>
-                  <option>Engine Bay Cleaning</option>
-                  <option>Windows / Glass Nano Coating</option>
-                  <option>Not Sure – Need Advice</option>
-                </select>
-              </div>
+              <label> Service Required </label>
+
+              <select id="fservice">
+                <option>Interior Detailing</option>
+
+                <option>Ceramic Coating</option>
+
+                <option>Paint Correction</option>
+
+                <option>General Service</option>
+              </select>
             </div>
 
             <div class="form-group">
-              <label for="fmessage">Car Details &amp; Preferred Day</label>
+              <label> Car Details </label>
+
               <textarea
                 id="fmessage"
-                placeholder="e.g. 2019 Toyota Camry, South Launceston — Thursday afternoon preferred"
+                placeholder="Vehicle details and preferred booking time..."
               ></textarea>
             </div>
 
-            <button type="submit" class="form-submit">Send Request →</button>
-            <p class="form-notice">
-              We'll get back to you within a few hours during business hours.
-            </p>
+            <button type="submit" class="form-submit">Send Request</button>
+
+            <p class="form-notice">We'll respond within a few hours.</p>
           </form>
 
-          <div class="form-success" id="formSuccess">
-            <div class="checkmark">✓</div>
+          <!-- SUCCESS -->
+
+          <div class="form-success" id="formSuccess" style="display: none">
             <h3>Request Sent!</h3>
-            <p>Thanks! We'll be in touch shortly to confirm your booking.</p>
+
+            <p>Thanks! We'll contact you shortly.</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
       <a href="#hero" class="footer-logo">
         <span class="cross"></span>
         Doctor Cars Australia
       </a>
-      <span class="footer-copy"
-        >© 2026 Doctor Cars Australia · All rights reserved · South Launceston
-        TAS</span
-      >
+
+      <span class="footer-copy"> © 2026 Doctor Cars Australia </span>
+
       <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="tel:+61439348847">0439 348 847</a>
+        <a href="#services"> Services </a>
+
+        <a href="#contact"> Contact </a>
+
+        <a href="tel:+61439348847"> 0439 348 847 </a>
       </div>
     </footer>
 
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+
     <script>
-      // Responsive Mobile Navigation Toggle
-      const mobileToggle = document.querySelector('.mobile-menu-toggle');
-      const navLinksContainer = document.querySelector('.nav-links');
-      const navLinks = document.querySelectorAll('.nav-links a');
+      lucide.createIcons();
 
-      mobileToggle.addEventListener('click', () => {
-        const isOpen = mobileToggle.classList.toggle('active');
-        navLinksContainer.classList.toggle('active');
-        mobileToggle.setAttribute('aria-expanded', isOpen);
+      // MOBILE MENU
+
+      const mobileToggle = document.querySelector(".mobile-menu-toggle");
+
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
       });
 
-      // Close menu when links are clicked
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileToggle.classList.remove('active');
-          navLinksContainer.classList.remove('active');
-          mobileToggle.setAttribute('aria-expanded', 'false');
-        });
-      });
+      // REVEAL ANIMATION
 
-      // Scroll reveal setup
       const reveals = document.querySelectorAll(".reveal");
+
       const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              observer.unobserve(e.target);
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
             }
           });
         },
-        { threshold: 0.12 },
+        { threshold: 0.15 },
       );
+
       reveals.forEach((el) => observer.observe(el));
 
-      // Trigger hero reveals immediately
-      document.querySelectorAll("#hero .reveal").forEach((el) => {
-        setTimeout(() => el.classList.add("visible"), 200);
+      // NAVBAR SCROLL EFFECT
+
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+
+        if (window.scrollY > 50) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
       });
 
-      // Form submission validation UI handler
+      // FORM
+
       document
         .getElementById("quoteForm")
         .addEventListener("submit", function (e) {
           e.preventDefault();
+
           const name = document.getElementById("fname").value.trim();
+
           const phone = document.getElementById("fphone").value.trim();
+
           if (!name || !phone) {
-            alert("Please fill in your name and phone number.");
+            alert("Please fill all required fields.");
+
             return;
           }
+
           this.style.display = "none";
+
           document.getElementById("formSuccess").style.display = "block";
         });
     </script>
