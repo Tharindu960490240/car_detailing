@@ -1,5 +1,5 @@
 /* =========================================
-   RESET & SYSTEM BASICS
+   1. RESET, VARIABLES & SYSTEM BASICS
 ========================================= */
 *,
 *::before,
@@ -43,7 +43,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar customization */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -56,7 +56,80 @@ body {
 }
 
 /* =========================================
-   NAVBAR (Fully Responsive)
+   2. REUSABLE UTILITIES & GLOBAL LAYOUT
+========================================= */
+section {
+  padding: 7rem 5%;
+}
+
+.section-label {
+  color: var(--red-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-title .outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Global Buttons & CTAs */
+.nav-cta,
+.btn-primary,
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  border-radius: 12px;
+  background: var(--red);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-cta:hover,
+.btn-primary:hover,
+.form-submit:hover {
+  background: var(--red-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.25);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.btn-ghost:hover {
+  color: var(--red-light);
+}
+
+/* =========================================
+   3. HEADER & NAVIGATION
 ========================================= */
 nav {
   position: fixed;
@@ -94,29 +167,11 @@ nav.scrolled {
   letter-spacing: -0.02em;
 }
 
-.cross {
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, var(--red), var(--red-light));
-  position: relative;
-}
-.cross::before,
-.cross::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: white;
-  transform: translate(-50%, -50%);
-}
-.cross::before {
-  width: 10px;
-  height: 2px;
-}
-.cross::after {
-  width: 2px;
-  height: 10px;
+.brand-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .nav-links {
@@ -140,34 +195,6 @@ nav.scrolled {
   color: #fff;
 }
 
-.nav-cta,
-.btn-primary,
-.form-submit {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.85rem 1.75rem;
-  border-radius: 12px;
-  background: var(--red);
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-cta:hover,
-.btn-primary:hover,
-.form-submit:hover {
-  background: var(--red-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.25);
-}
-
 /* Mobile Toggle Hamburger */
 .mobile-menu-toggle {
   display: none;
@@ -185,13 +212,11 @@ nav.scrolled {
   width: 100%;
   height: 2px;
   background-color: var(--text-primary);
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* =========================================
-   HERO HERO COMPONENT
+   4. HERO HERO SECTION
 ========================================= */
 #hero {
   min-height: 100vh;
@@ -251,6 +276,7 @@ nav.scrolled {
 .hero-title .red {
   color: var(--red-light);
 }
+
 .hero-title .outline {
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
@@ -277,26 +303,13 @@ nav.scrolled {
   align-items: center;
 }
 
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
-}
-.btn-ghost:hover {
-  color: var(--red-light);
-}
-
 .trust-row {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
   flex-wrap: wrap;
 }
+
 .trust-row div {
   display: flex;
   align-items: center;
@@ -308,6 +321,7 @@ nav.scrolled {
   font-size: 0.8rem;
   font-weight: 500;
 }
+
 .trust-row svg {
   width: 14px;
   height: 14px;
@@ -316,16 +330,77 @@ nav.scrolled {
 
 .hero-scroll {
   display: none;
-} /* Simplified visually for extreme responsive optimization */
+}
 
 /* =========================================
-   MARQUEE INF-LOOP
+   5. FACEBOOK VIDEO GALLERY SECTION
+========================================= */
+#video-gallery {
+  padding: 6rem 5%;
+  background: #0f0f12;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.fb-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+.fb-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.fb-video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Widescreen 16:9 box aspect configuration */
+  background: #000;
+}
+
+.fb-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.fb-card-info {
+  padding: 1.5rem;
+}
+
+.fb-card-info h3 {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.fb-card-info p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* =========================================
+   6. MARQUEE LOOP COMPONENT
 ========================================= */
 .marquee-wrap {
   overflow: hidden;
   padding: 1.5rem 0;
   background: #0f0f12;
-  border-y: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .marquee-track {
@@ -345,44 +420,12 @@ nav.scrolled {
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* =========================================
-   GLOBAL SECTIONS STRUCTURE
-========================================= */
-section {
-  padding: 7rem 5%;
-}
-
-.section-label {
-  color: var(--red-light);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
-
-.section-title {
-  font-family: var(--font-head);
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-.section-title .outline {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-}
-
-/* =========================================
-   WHY SECTION
+   7. WHY CHOOSE US SECTION
 ========================================= */
 .why-container {
   display: grid;
@@ -396,6 +439,7 @@ section {
   flex-direction: column;
   gap: 1.5rem;
 }
+
 .why-right p {
   color: var(--text-secondary);
   font-size: 1.05rem;
@@ -422,13 +466,14 @@ section {
   color: var(--text-primary);
   margin-bottom: 0.25rem;
 }
+
 .stat-label {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
 
 /* =========================================
-   SERVICES CARD GRID
+   8. SERVICES CARDS BLOCK
 ========================================= */
 .services-header {
   display: flex;
@@ -470,6 +515,7 @@ section {
   justify-content: center;
   margin-bottom: 1.5rem;
 }
+
 .service-icon svg {
   width: 22px;
   height: 22px;
@@ -503,7 +549,7 @@ section {
 }
 
 /* =========================================
-   PROCESS SECTION
+   9. PROCESS STEPS PIPELINE
 ========================================= */
 .process-grid {
   display: grid;
@@ -532,13 +578,14 @@ section {
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
+
 .step-desc {
   font-size: 0.9rem;
   color: var(--text-secondary);
 }
 
 /* =========================================
-   CONTACT COMPONENT & FORMS
+   10. CONTACT INFO & FORM MIX
 ========================================= */
 .contact-wrap {
   display: grid;
@@ -573,6 +620,7 @@ section {
   justify-content: center;
   min-width: 44px;
 }
+
 .contact-detail-icon svg {
   width: 18px;
   height: 18px;
@@ -585,6 +633,7 @@ section {
   letter-spacing: 0.05em;
   color: var(--text-muted);
 }
+
 .contact-detail-text a,
 .contact-detail-text span {
   color: var(--text-primary);
@@ -616,6 +665,7 @@ section {
 .form-group {
   margin-bottom: 1.25rem;
 }
+
 .form-group label {
   display: block;
   font-size: 0.75rem;
@@ -658,7 +708,7 @@ section {
 }
 
 /* =========================================
-   FOOTER
+   11. FOOTER SECTION
 ========================================= */
 footer {
   padding: 3rem 5%;
@@ -669,6 +719,7 @@ footer {
   flex-wrap: wrap;
   gap: 1.5rem;
 }
+
 .footer-logo {
   font-family: var(--font-head);
   font-weight: 800;
@@ -676,16 +727,19 @@ footer {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
+
 .footer-copy {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+
 .footer-links {
   display: flex;
   gap: 1.5rem;
 }
+
 .footer-links a {
   color: var(--text-secondary);
   text-decoration: none;
@@ -693,34 +747,26 @@ footer {
 }
 
 /* =========================================
-   INTERSECTION ANIMATIONS STRUCT
+   12. INTERSECTION SCROLL REVEALS
 ========================================= */
 .reveal {
   opacity: 0;
   transform: translateY(15px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
-.reveal-delay-1 {
-  transition-delay: 0.1s;
-}
-.reveal-delay-2 {
-  transition-delay: 0.2s;
-}
-.reveal-delay-3 {
-  transition-delay: 0.3s;
-}
-.reveal-delay-4 {
-  transition-delay: 0.4s;
-}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
 
 /* =========================================
-   RESPONSIVE MEDIA QUERIES (Breakpoints)
+   13. COMPREHENSIVE RESPONSIVE BREAKPOINTS
 ========================================= */
 @media (max-width: 968px) {
   .why-container,
@@ -778,57 +824,17 @@ footer {
     text-align: center;
     gap: 1.5rem;
   }
+
   .footer-links {
     justify-content: center;
   }
 }
 
-/* =========================================
-   BRAND LOGO STYLES
-========================================= */
-
-/* Target the new image inside both headers and footers */
-.brand-logo {
-  height: 36px; /* Restricts height to keep the navbar sleek */
-  width: auto; /* Maintains original aspect ratio */
-  object-fit: contain;
-  display: block;
-}
-
-/* Update nav logo container to align items perfectly */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: #fff;
-  text-decoration: none;
-  font-family: var(--font-head);
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-/* Update footer logo container */
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: #fff;
-  text-decoration: none;
-  font-family: var(--font-head);
-  font-weight: 800;
-}
-
-/* Remove the old CSS cross shape since it's no longer needed */
-.cross {
-  display: none;
-}
-
-/* Mobile responsive scaling for the logo image */
 @media (max-width: 480px) {
   .brand-logo {
-    height: 30px; /* Slightly smaller on compact screens so text doesn't wrap */
+    height: 30px;
   }
+  
   .nav-logo {
     font-size: 1rem;
   }

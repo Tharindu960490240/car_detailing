@@ -16,7 +16,7 @@ function toggleMenu() {
 mobileToggle.addEventListener("click", toggleMenu);
 
 // Automatically dismiss menu overlay when links are activated
-menuLinks.forEach(link => {
+menuLinks.forEach((link) => {
   link.addEventListener("click", () => {
     if (navLinks.classList.contains("active")) {
       toggleMenu();
@@ -29,7 +29,7 @@ const reveals = document.querySelectorAll(".reveal");
 const observerOptions = {
   root: null,
   threshold: 0.1,
-  rootMargin: "0px 0px -40px 0px"
+  rootMargin: "0px 0px -40px 0px",
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -45,14 +45,18 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach((el) => observer.observe(el));
 
 // NAVBAR ON-SCROLL COMPRESSION TRANSITION
-window.addEventListener("scroll", () => {
-  const nav = document.querySelector("nav");
-  if (window.scrollY > 40) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
-}, { passive: true });
+window.addEventListener(
+  "scroll",
+  () => {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 40) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  },
+  { passive: true },
+);
 
 // ASYNC CLIENT-SIDE QUOTE REQUEST FORM HANDLER
 document.getElementById("quoteForm").addEventListener("submit", function (e) {
