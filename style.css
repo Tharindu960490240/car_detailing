@@ -10,21 +10,21 @@
 }
 
 :root {
-  /* Ultra-modern dark luxury palette */
-  --red: #dc2626;
-  --red-light: #ef4444;
-  --red-glow: rgba(220, 38, 38, 0.15);
+  /* Official Brand Colors Extracted Directly From Your Logo */
+  --brand-blue-deep: #060e1a;     /* Ultra-Dark Sapphire Blue base background */
+  --brand-blue-card: #0c1a2f;     /* Deep Royal Blue for cards and containers */
+  --brand-blue-input: #12243f;    /* Mid-tone blue for structural inputs */
+  
+  --brand-gold: #d4af37;          /* Classic Premium Metallic Gold accent */
+  --brand-gold-light: #f3cf65;    /* Vibrant gold for hover focus interaction */
+  --brand-gold-glow: rgba(212, 175, 55, 0.12); /* Soft ambient gold overlay backing */
 
-  --bg-main: #0a0a0c;
-  --bg-card: #131316;
-  --bg-input: #1a1a1e;
+  --text-primary: #f4f6f9;
+  --text-secondary: #a4b3c6;
+  --text-muted: #647791;
 
-  --text-primary: #f4f4f5;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-
-  --border: rgba(255, 255, 255, 0.06);
-  --border-focus: rgba(239, 68, 68, 0.4);
+  --border: rgba(212, 175, 55, 0.08); /* Sophisticated subtle gold border baseline */
+  --border-focus: rgba(212, 175, 55, 0.4); /* Input boxes glow gold on selection */
 
   --font-head: "Syne", sans-serif;
   --font-body: "Inter", sans-serif;
@@ -36,22 +36,22 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-main);
+  background-color: var(--brand-blue-deep);
   color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar styled in luxury brand gold */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-main);
+  background: var(--brand-blue-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--red);
+  background: var(--brand-gold);
   border-radius: 4px;
 }
 
@@ -63,7 +63,7 @@ section {
 }
 
 .section-label {
-  color: var(--red-light);
+  color: var(--brand-gold);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -84,7 +84,7 @@ section {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
 }
 
-/* Global Buttons & CTAs */
+/* Brand Buttons & CTAs - Bold Metallic Gold Base */
 .nav-cta,
 .btn-primary,
 .form-submit {
@@ -93,8 +93,8 @@ section {
   justify-content: center;
   padding: 0.85rem 1.75rem;
   border-radius: 12px;
-  background: var(--red);
-  color: #fff;
+  background: var(--brand-gold);
+  color: #060e1a; /* Dark text over bright gold for excellent readability */
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 700;
@@ -108,9 +108,9 @@ section {
 .nav-cta:hover,
 .btn-primary:hover,
 .form-submit:hover {
-  background: var(--red-light);
+  background: var(--brand-gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.25);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
 }
 
 .btn-ghost {
@@ -125,7 +125,7 @@ section {
 }
 
 .btn-ghost:hover {
-  color: var(--red-light);
+  color: var(--brand-gold);
 }
 
 /* =========================================
@@ -142,7 +142,7 @@ nav {
   justify-content: space-between;
   padding: 0 5%;
   z-index: 1000;
-  background: rgba(10, 10, 12, 0.75);
+  background: rgba(6, 14, 26, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -151,8 +151,8 @@ nav {
 
 nav.scrolled {
   height: 64px;
-  background: rgba(10, 10, 12, 0.92);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(6, 14, 26, 0.92);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .nav-logo {
@@ -175,6 +175,10 @@ nav.scrolled {
   transition: height 0.3s ease;
 }
 
+nav.scrolled .brand-logo {
+  height: 30px;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -193,7 +197,7 @@ nav.scrolled {
 }
 
 .nav-links a:hover {
-  color: #fff;
+  color: var(--brand-gold);
 }
 
 /* Mobile Toggle Hamburger */
@@ -219,8 +223,6 @@ nav.scrolled {
 /* =========================================
    4. SOCIAL MEDIA LINK INTEGRATIONS
 ========================================= */
-
-/* Navbar Social Link Framework */
 .nav-social-item {
   display: inline-flex;
   align-items: center;
@@ -244,14 +246,13 @@ nav.scrolled {
 }
 
 .nav-social-item:hover {
-  color: var(--text-primary) !important;
+  color: var(--brand-gold) !important;
 }
 
 .nav-social-item:hover .inline-fb-icon {
-  color: var(--red-light);
+  color: var(--brand-gold);
 }
 
-/* Contact Section Text Link Layout */
 .contact-detail-text .text-link {
   display: inline-flex;
   align-items: center;
@@ -264,17 +265,17 @@ nav.scrolled {
 .contact-detail-text .text-link .inline-fb-icon {
   width: 16px;
   height: 16px;
-  color: var(--red-light);
+  color: var(--brand-gold);
   flex-shrink: 0;
   display: inline-block;
 }
 
 .contact-detail-text .text-link:hover {
-  color: var(--red-light);
+  color: var(--brand-gold);
 }
 
 /* =========================================
-   5. HERO HERO SECTION
+   5. HERO SECTION
 ========================================= */
 #hero {
   min-height: 100vh;
@@ -290,7 +291,7 @@ nav.scrolled {
   inset: 0;
   background: radial-gradient(
     circle at 80% 20%,
-    rgba(239, 68, 68, 0.12),
+    rgba(212, 175, 55, 0.12),
     transparent 45%
   );
   z-index: 1;
@@ -303,7 +304,7 @@ nav.scrolled {
   right: -50px;
   top: 15%;
   border-radius: 50%;
-  background: rgba(239, 68, 68, 0.06);
+  background: rgba(212, 175, 55, 0.03);
   filter: blur(100px);
 }
 
@@ -314,7 +315,7 @@ nav.scrolled {
 }
 
 .hero-tag {
-  color: var(--red-light);
+  color: var(--brand-gold);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -332,7 +333,7 @@ nav.scrolled {
 }
 
 .hero-title .red {
-  color: var(--red-light);
+  color: var(--brand-gold); /* Transforms focus terms into bright gold */
 }
 
 .hero-title .outline {
@@ -383,15 +384,15 @@ nav.scrolled {
 .trust-row svg {
   width: 14px;
   height: 14px;
-  color: var(--red-light);
+  color: var(--brand-gold);
 }
 
 /* =========================================
    6. FACEBOOK VIDEO GALLERY GRID
 ========================================= */
 #video-gallery {
-  padding: 6rem 5%;
-  background: #0f0f12;
+  padding: 5rem 5%;
+  background: #040a12;
 }
 
 .video-grid {
@@ -402,22 +403,22 @@ nav.scrolled {
 }
 
 .fb-card {
-  background: var(--bg-card);
+  background: var(--brand-blue-card);
   border: 1px solid var(--border);
   border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .fb-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(239, 68, 68, 0.25);
+  border-color: rgba(212, 175, 55, 0.3);
 }
 
 .fb-video-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* Responsive 16:9 box aspect configuration */
+  padding-top: 56.25%;
   background: #000;
 }
 
@@ -447,12 +448,12 @@ nav.scrolled {
 }
 
 /* =========================================
-   7. MARQUEE LOOP COMPONENT
+   7. MARQUEE LOOP TRACK
 ========================================= */
 .marquee-wrap {
   overflow: hidden;
   padding: 1.5rem 0;
-  background: #0f0f12;
+  background: #040a12;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -479,7 +480,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   8. WHY CHOOSE US SECTION
+   8. WHY CHOOSE US
 ========================================= */
 .why-container {
   display: grid;
@@ -509,7 +510,7 @@ nav.scrolled {
 .stat-item {
   padding: 1.5rem;
   border-radius: 16px;
-  background: var(--bg-card);
+  background: var(--brand-blue-card);
   border: 1px solid var(--border);
 }
 
@@ -517,7 +518,7 @@ nav.scrolled {
   font-family: var(--font-head);
   font-size: 2rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--brand-gold);
   margin-bottom: 0.25rem;
 }
 
@@ -527,7 +528,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   9. SERVICES CARDS BLOCK
+   9. SERVICES CARDS
 ========================================= */
 .services-header {
   display: flex;
@@ -547,7 +548,7 @@ nav.scrolled {
 .service-card {
   padding: 2.5rem;
   border-radius: 20px;
-  background: var(--bg-card);
+  background: var(--brand-blue-card);
   border: 1px solid var(--border);
   transition: all 0.25s ease;
   display: flex;
@@ -555,7 +556,7 @@ nav.scrolled {
 }
 
 .service-card:hover {
-  border-color: rgba(239, 68, 68, 0.25);
+  border-color: rgba(212, 175, 55, 0.4);
   transform: translateY(-4px);
 }
 
@@ -563,7 +564,7 @@ nav.scrolled {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--red-glow);
+  background: var(--brand-gold-glow);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -573,7 +574,7 @@ nav.scrolled {
 .service-icon svg {
   width: 22px;
   height: 22px;
-  color: var(--red-light);
+  color: var(--brand-gold);
 }
 
 .service-name {
@@ -603,7 +604,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   10. PROCESS STEPS PIPELINE
+   10. WORKFLOW PIPELINE STEPS
 ========================================= */
 .process-grid {
   display: grid;
@@ -615,7 +616,7 @@ nav.scrolled {
 .process-step {
   padding: 2rem;
   border-radius: 16px;
-  background: var(--bg-card);
+  background: var(--brand-blue-card);
   border: 1px solid var(--border);
 }
 
@@ -623,7 +624,7 @@ nav.scrolled {
   font-family: var(--font-head);
   font-size: 2rem;
   font-weight: 800;
-  color: var(--red-light);
+  color: var(--brand-gold);
   margin-bottom: 1rem;
 }
 
@@ -639,7 +640,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   11. CONTACT INFO & FORM MIX
+   11. CONTACT BLOCK & APPLICATION FORM
 ========================================= */
 .contact-wrap {
   display: grid;
@@ -659,7 +660,7 @@ nav.scrolled {
   gap: 1.25rem;
   padding: 1rem;
   border-radius: 14px;
-  background: var(--bg-card);
+  background: var(--brand-blue-card);
   border: 1px solid var(--border);
   margin-bottom: 1rem;
 }
@@ -668,7 +669,7 @@ nav.scrolled {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: var(--red-glow);
+  background: var(--brand-gold-glow);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -678,7 +679,7 @@ nav.scrolled {
 .contact-detail-icon svg {
   width: 18px;
   height: 18px;
-  color: var(--red-light);
+  color: var(--brand-gold);
 }
 
 .contact-detail-text strong {
@@ -701,7 +702,7 @@ nav.scrolled {
 .contact-form {
   padding: 2.5rem;
   border-radius: 24px;
-  background: var(--bg-card);
+  background: var(--brand-blue-card);
   border: 1px solid var(--border);
 }
 
@@ -737,7 +738,7 @@ nav.scrolled {
   padding: 0.85rem 1rem;
   border-radius: 10px;
   border: 1px solid var(--border);
-  background: var(--bg-input);
+  background: var(--brand-blue-input);
   color: #fff;
   font-family: var(--font-body);
   font-size: 0.95rem;
@@ -774,6 +775,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  background-color: #040a12;
 }
 
 .footer-logo {
@@ -811,15 +813,15 @@ footer {
 }
 
 .footer-links a:hover {
-  color: var(--white);
+  color: var(--brand-gold);
 }
 
 .footer-links a:hover .inline-fb-icon {
-  color: var(--red-light);
+  color: var(--brand-gold);
 }
 
 /* =========================================
-   13. INTERSECTION SCROLL REVEALS
+   13. SCROLL REVEAL ANIMATIONS
 ========================================= */
 .reveal {
   opacity: 0;
@@ -867,7 +869,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #0a0a0c;
+    background: var(--brand-blue-deep);
     flex-direction: column;
     padding: 3rem 2rem;
     gap: 2rem;
@@ -881,7 +883,7 @@ footer {
     transform: translateX(0);
   }
 
-  /* Hamburger transformations when toggled active */
+  /* Hamburger transform when toggled open */
   .mobile-menu-toggle.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
@@ -893,7 +895,7 @@ footer {
   }
 
   .nav-social-item {
-    font-size: 1.1rem; /* Scale menu up inside mobile container overlay */
+    font-size: 1.1rem;
     gap: 0.75rem;
   }
   
