@@ -74,3 +74,26 @@ document.getElementById("quoteForm").addEventListener("submit", function (e) {
   this.style.display = "none";
   document.getElementById("formSuccess").style.display = "block";
 });
+
+// SCROLL TO TOP (PAGE UP) FUNCTIONALITY
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+window.addEventListener(
+  "scroll",
+  () => {
+    // Show button after scrolling down 400px
+    if (window.scrollY > 400) {
+      scrollToTopBtn.classList.add("show");
+    } else {
+      scrollToTopBtn.classList.remove("show");
+    }
+  },
+  { passive: true },
+);
+
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});

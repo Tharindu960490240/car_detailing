@@ -932,6 +932,60 @@ footer {
 }
 
 /* =========================================
+   16. SCROLL TO TOP (PAGE UP) COMPONENT
+========================================= */
+.scroll-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background-color: var(--brand-blue-card);
+  border: 1px solid var(--brand-gold);
+  color: var(--brand-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 998; /* Sits right under the mobile menu overlay */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-to-top svg,
+.scroll-to-top i {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5px;
+  transition: transform 0.2s ease;
+}
+
+/* Toggle visibility class via JS */
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Desktop Hover States */
+@media (hover: hover) {
+  .scroll-to-top:hover {
+    background-color: var(--brand-gold);
+    color: var(--brand-blue-deep);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+  }
+
+  .scroll-to-top:hover i,
+  .scroll-to-top:hover svg {
+    transform: translateY(-2px);
+  }
+}
+
+/* =========================================
    15. COMPREHENSIVE RESPONSIVE BREAKPOINTS
 ========================================= */
 @media (max-width: 1024px) {
@@ -949,6 +1003,13 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+  
   nav {
     height: 70px;
   }
