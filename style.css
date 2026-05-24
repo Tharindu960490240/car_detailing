@@ -172,6 +172,7 @@ nav.scrolled {
   width: auto;
   object-fit: contain;
   display: block;
+  transition: height 0.3s ease;
 }
 
 .nav-links {
@@ -216,7 +217,64 @@ nav.scrolled {
 }
 
 /* =========================================
-   4. HERO HERO SECTION
+   4. SOCIAL MEDIA LINK INTEGRATIONS
+========================================= */
+
+/* Navbar Social Link Framework */
+.nav-social-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.nav-social-item .inline-fb-icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.5px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav-social-item:hover {
+  color: var(--text-primary) !important;
+}
+
+.nav-social-item:hover .inline-fb-icon {
+  color: var(--red-light);
+}
+
+/* Contact Section Text Link Layout */
+.contact-detail-text .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-detail-text .text-link .inline-fb-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--red-light);
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.contact-detail-text .text-link:hover {
+  color: var(--red-light);
+}
+
+/* =========================================
+   5. HERO HERO SECTION
 ========================================= */
 #hero {
   min-height: 100vh;
@@ -328,12 +386,8 @@ nav.scrolled {
   color: var(--red-light);
 }
 
-.hero-scroll {
-  display: none;
-}
-
 /* =========================================
-   5. FACEBOOK VIDEO GALLERY SECTION
+   6. FACEBOOK VIDEO GALLERY GRID
 ========================================= */
 #video-gallery {
   padding: 6rem 5%;
@@ -363,7 +417,7 @@ nav.scrolled {
 .fb-video-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* Widescreen 16:9 box aspect configuration */
+  padding-top: 56.25%; /* Responsive 16:9 box aspect configuration */
   background: #000;
 }
 
@@ -393,7 +447,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   6. MARQUEE LOOP COMPONENT
+   7. MARQUEE LOOP COMPONENT
 ========================================= */
 .marquee-wrap {
   overflow: hidden;
@@ -425,7 +479,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   7. WHY CHOOSE US SECTION
+   8. WHY CHOOSE US SECTION
 ========================================= */
 .why-container {
   display: grid;
@@ -473,7 +527,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   8. SERVICES CARDS BLOCK
+   9. SERVICES CARDS BLOCK
 ========================================= */
 .services-header {
   display: flex;
@@ -549,7 +603,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   9. PROCESS STEPS PIPELINE
+   10. PROCESS STEPS PIPELINE
 ========================================= */
 .process-grid {
   display: grid;
@@ -585,7 +639,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   10. CONTACT INFO & FORM MIX
+   11. CONTACT INFO & FORM MIX
 ========================================= */
 .contact-wrap {
   display: grid;
@@ -628,10 +682,12 @@ nav.scrolled {
 }
 
 .contact-detail-text strong {
+  display: block;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
+  margin-bottom: 0.15rem;
 }
 
 .contact-detail-text a,
@@ -708,7 +764,7 @@ nav.scrolled {
 }
 
 /* =========================================
-   11. FOOTER SECTION
+   12. FOOTER SECTION
 ========================================= */
 footer {
   padding: 3rem 5%;
@@ -738,6 +794,7 @@ footer {
 .footer-links {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .footer-links a {
@@ -746,8 +803,23 @@ footer {
   font-size: 0.85rem;
 }
 
+.footer-links .inline-fb-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-links a:hover .inline-fb-icon {
+  color: var(--red-light);
+}
+
 /* =========================================
-   12. INTERSECTION SCROLL REVEALS
+   13. INTERSECTION SCROLL REVEALS
 ========================================= */
 .reveal {
   opacity: 0;
@@ -766,7 +838,7 @@ footer {
 .reveal-delay-4 { transition-delay: 0.4s; }
 
 /* =========================================
-   13. COMPREHENSIVE RESPONSIVE BREAKPOINTS
+   14. COMPREHENSIVE RESPONSIVE BREAKPOINTS
 ========================================= */
 @media (max-width: 968px) {
   .why-container,
@@ -779,6 +851,10 @@ footer {
 @media (max-width: 768px) {
   nav {
     height: 70px;
+  }
+
+  nav.scrolled {
+    height: 64px;
   }
 
   .mobile-menu-toggle {
@@ -798,6 +874,7 @@ footer {
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
+    overflow-y: auto;
   }
 
   .nav-links.active {
@@ -813,6 +890,16 @@ footer {
   }
   .mobile-menu-toggle.active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-social-item {
+    font-size: 1.1rem; /* Scale menu up inside mobile container overlay */
+    gap: 0.75rem;
+  }
+  
+  .nav-social-item .inline-fb-icon {
+    width: 20px;
+    height: 20px;
   }
 
   .form-row {
