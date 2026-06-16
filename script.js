@@ -58,22 +58,62 @@ window.addEventListener(
   { passive: true },
 );
 
-// ASYNC CLIENT-SIDE QUOTE REQUEST FORM HANDLER
-document.getElementById("quoteForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+// ASYNC CLIENT-SIDE QUOTE REQUEST FORM HANDLER (Formspree)
+document
+  .getElementById("quoteForm")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  const name = document.getElementById("fname").value.trim();
-  const phone = document.getElementById("fphone").value.trim();
+    const form = this; // Cache the form element
+    const submitBtn = document.getElementById("formSubmitBtn");
+    const formSuccessAlert = document.getElementById("formSuccessAlert");
+    const formErrorAlert = document.getElementById("formErrorAlert");
 
-  if (!name || !phone) {
-    alert("Please fill all required fields.");
-    return;
-  }
+    // Basic UI Feedback
+    submitBtn.textContent = "Sending…";
+    submitBtn.disabled = true;
 
-  // Visual Swap for completion UI status
-  this.style.display = "none";
-  document.getElementById("formSuccess").style.display = "block";
-});
+    // Hide previous alerts
+    formSuccessAlert.style.display = "none";
+    formErrorAlert.style.display = "none";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+
+      if (response.ok) {
+        form.reset();
+        form.style.display = "none";
+        formSuccessAlert.style.display = "block";
+
+        // If using Lucide icons, refresh them
+        if (typeof lucide !== "undefined") lucide.createIcons();
+
+        setTimeout(() => {
+          form.style.display = "block";
+          formSuccessAlert.style.display = "none";
+        }, 5000); // Increased to 5s for better readability
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      form.style.display = "none";
+      formErrorAlert.style.display = "block";
+
+      if (typeof lucide !== "undefined") lucide.createIcons();
+
+      setTimeout(() => {
+        form.style.display = "block";
+        formErrorAlert.style.display = "none";
+      }, 5000);
+    } finally {
+      submitBtn.textContent = "Send Request";
+      submitBtn.disabled = false;
+    }
+  });
 
 // SCROLL TO TOP (PAGE UP) FUNCTIONALITY
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");

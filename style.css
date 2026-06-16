@@ -33,6 +33,21 @@
 
   --font-head: "Syne", sans-serif;
   --font-body: "Inter", sans-serif;
+
+  /* Success Colors */
+  --tech-success: #22c55e; /* Clean emerald green */
+  --stroke-success: #166534; /* Deep forest green for border */
+  --tech-green-glow: rgba(34, 197, 94, 0.08); /* Subtle glow */
+
+  /* Error Colors */
+  --tech-error: #ef4444; /* Vibrant alert red */
+  --stroke-error: #991b1b; /* Dark blood red for border */
+  --tech-red-glow: rgba(239, 68, 68, 0.08); /* Subtle glow */
+
+  /* Utility */
+  --bg-deep: #ffffff; /* Text color for headings in alerts */
+  --text-sub: #c0c9d6; /* Matches --text-secondary */
+  --radius: 12px;
 }
 
 html {
@@ -269,6 +284,27 @@ nav.scrolled .brand-logo {
   overflow: hidden;
 }
 
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=1800&q=80");
+  background-size: cover;
+  background-position: center 40%;
+  z-index: 0;
+}
+
+.hero-bg-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 19, 71, 0.72) 0%,
+    rgba(0, 19, 71, 0.55) 40%,
+    rgba(0, 19, 71, 0.88) 100%
+  );
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -321,7 +357,7 @@ nav.scrolled .brand-logo {
 
 .hero-title .outline {
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
 }
 
 .hero-bottom {
@@ -338,7 +374,7 @@ nav.scrolled .brand-logo {
 }
 
 .hero-desc {
-  max-width: 540px;
+  max-width: auto;
   font-size: clamp(1rem, 1.2vw, 1.15rem);
   color: var(--text-secondary);
   line-height: 1.7;
@@ -364,7 +400,7 @@ nav.scrolled .brand-logo {
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 99px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.2);
   border: 1px solid var(--border);
   font-size: 0.8rem;
   font-weight: 500;
@@ -554,13 +590,38 @@ nav.scrolled .brand-logo {
 }
 
 .service-card {
-  padding: 2.25rem 2rem;
   border-radius: 20px;
   background: var(--brand-blue-card);
   border: 1px solid var(--border);
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.service-card-img {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-card-img img {
+  transform: scale(1.05);
+}
+
+.service-card-body {
+  padding: 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .service-card:hover {
@@ -622,6 +683,7 @@ nav.scrolled .brand-logo {
     rgba(212, 175, 55, 0.03) 100%
   );
   border-color: rgba(212, 175, 55, 0.25);
+  padding: 2rem;
 }
 
 .icon-featured {
@@ -737,6 +799,12 @@ nav.scrolled .brand-logo {
   margin-bottom: 1rem;
 }
 
+.address-link:hover {
+  color: var(--brand-gold);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .contact-detail-icon {
   width: 44px;
   height: 44px;
@@ -835,6 +903,52 @@ nav.scrolled .brand-logo {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 1rem;
+}
+
+.success-alert-container {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  border: 1px dashed var(--stroke-success);
+  background: var(--tech-green-glow);
+  border-radius: var(--radius);
+  margin-top: 1.5rem;
+}
+.success-alert-container svg {
+  width: 44px;
+  height: 44px;
+  color: var(--tech-success) !important;
+}
+.success-alert-container h3 {
+  font-size: 1.35rem;
+  color: var(--bg-deep);
+  margin-bottom: 0.45rem;
+}
+.success-alert-container p {
+  font-size: 0.96rem;
+  color: var(--text-sub);
+}
+
+.error-alert-container {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  border: 1px dashed var(--stroke-error);
+  background: var(--tech-red-glow);
+  border-radius: var(--radius);
+  margin-top: 1.5rem;
+}
+.error-alert-container svg {
+  width: 44px;
+  height: 44px;
+  color: var(--tech-error) !important;
+}
+.error-alert-container h3 {
+  font-size: 1.35rem;
+  color: var(--bg-deep);
+  margin-bottom: 0.45rem;
+}
+.error-alert-container p {
+  font-size: 0.96rem;
+  color: var(--text-sub);
 }
 
 /* =========================================
@@ -976,6 +1090,21 @@ footer {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* Continuous breathing animation for the logo */
+.brand-logo {
+  animation: logo-breathe 3s ease-in-out infinite;
+}
+
+@keyframes logo-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 /* Desktop Hover States */
