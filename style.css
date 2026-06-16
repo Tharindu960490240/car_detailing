@@ -82,7 +82,7 @@ section {
 }
 
 .section-label {
-  color: var(--brand-gold);
+  color: var(--brand-gold) !important;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -272,6 +272,35 @@ nav.scrolled .brand-logo {
   color: var(--brand-gold);
 }
 
+/* Promotion Banner Styles */
+
+.promo-banner {
+  background: var(--brand-gold) !important;
+  color: var(--brand-blue-deep) !important;
+  padding: 0.75rem 5%;
+  text-align: center;
+  position: relative;
+  z-index: 999;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  margin-top: 100px;
+}
+
+.promo-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--brand-blue-deep) !important;
+}
+
+.promo-content i {
+  width: 18px;
+  height: 18px;
+  color: var(--brand-blue-deep) !important;
+}
+
 /* =========================================
    5. HERO SECTION
 ========================================= */
@@ -280,7 +309,7 @@ nav.scrolled .brand-logo {
   position: relative;
   display: flex;
   align-items: flex-end;
-  padding: 140px 5% clamp(3rem, 6vw, 5rem);
+  padding: 0 5% clamp(3rem, 6vw, 5rem);
   overflow: hidden;
 }
 
@@ -585,7 +614,7 @@ nav.scrolled .brand-logo {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
