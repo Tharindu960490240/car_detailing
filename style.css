@@ -272,33 +272,131 @@ nav.scrolled .brand-logo {
   color: var(--brand-gold);
 }
 
-/* Promotion Banner Styles */
-
-.promo-banner {
-  background: var(--brand-gold) !important;
-  color: var(--brand-blue-deep) !important;
-  padding: 0.75rem 5%;
-  text-align: center;
-  position: relative;
+/* ── Promo Banner ── */
+.pb-shell {
+  background: #0d0d0d;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+  user-select: none;
+  position: sticky;
+  top: 80px;
   z-index: 999;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-  margin-top: 100px;
+  margin-top: 80px;
+  transition:
+    top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.promo-content {
+.pb-shell.scrolled {
+  top: 64px;
+  margin-top: 64px;
+  transition:
+    top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pb-shell::before,
+.pb-shell::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 3;
+  pointer-events: none;
+}
+.pb-shell::before {
+  left: 0;
+  background: linear-gradient(to right, #0d0d0d 20%, transparent);
+}
+.pb-shell::after {
+  right: 0;
+  background: linear-gradient(to left, #0d0d0d 20%, transparent);
+}
+
+.pb-track {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  color: var(--brand-blue-deep) !important;
+  width: max-content;
+  white-space: nowrap;
+  animation: pb-scroll 26s linear infinite;
+}
+.pb-shell:hover .pb-track {
+  animation-play-state: paused;
+}
+@keyframes pb-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.promo-content i {
-  width: 18px;
-  height: 18px;
-  color: var(--brand-blue-deep) !important;
+.pb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 36px;
+}
+.pb-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: pb-pulse 1.8s ease-in-out infinite;
+}
+@keyframes pb-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+}
+.pb-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 0.5px solid rgba(74, 222, 128, 0.28);
+  border-radius: 5px;
+  padding: 3px 8px;
+  flex-shrink: 0;
+}
+.pb-rule {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+.pb-icon {
+  width: 16px;
+  height: 16px;
+  color: #facc15;
+  flex-shrink: 0;
+}
+.pb-copy {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 400;
+}
+.pb-copy strong {
+  color: #facc15;
+  font-weight: 500;
+}
+.pb-sep {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 14px;
+  padding: 0 12px;
+  flex-shrink: 0;
 }
 
 /* =========================================
@@ -614,7 +712,7 @@ nav.scrolled .brand-logo {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -1121,18 +1219,24 @@ footer {
   transform: translateY(0);
 }
 
-/* Continuous breathing animation for the logo */
 .brand-logo {
-  animation: logo-breathe 3s ease-in-out infinite;
+  animation: logo-float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 0px rgba(250, 173, 6, 0));
 }
 
-@keyframes logo-breathe {
+@keyframes logo-float {
   0%,
   100% {
-    transform: scale(1);
+    transform: translateY(0px);
+    /* transform: scale(1) rotate(0deg); */
+    filter: drop-shadow(0 0 6px rgba(250, 173, 6, 0.3));
+    filter: brightness(1) drop-shadow(0 0 4px rgba(250, 173, 6, 0.2));
   }
   50% {
-    transform: scale(1.2);
+    transform: translateY(-4px);
+    /* transform: scale(1.04) rotate(-1deg); */
+    filter: drop-shadow(0 8px 16px rgba(250, 173, 6, 0.55));
+    filter: brightness(1.25) drop-shadow(0 0 12px rgba(250, 173, 6, 0.6));
   }
 }
 
@@ -1181,6 +1285,19 @@ footer {
 
   nav.scrolled {
     height: 64px;
+  }
+
+  .pb-shell {
+    top: 70px;
+    margin-top: 70px;
+  }
+
+  .pb-shell.scrolled {
+    top: 64px;
+    margin-top: 64px;
+    transition:
+      top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .mobile-menu-toggle {

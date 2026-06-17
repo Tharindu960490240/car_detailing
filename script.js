@@ -49,10 +49,13 @@ window.addEventListener(
   "scroll",
   () => {
     const nav = document.querySelector("nav");
+    const promo = document.querySelector(".pb-shell");
     if (window.scrollY > 40) {
       nav.classList.add("scrolled");
+      promo.classList.add("scrolled");
     } else {
       nav.classList.remove("scrolled");
+      promo.classList.remove("scrolled"); 
     }
   },
   { passive: true },
