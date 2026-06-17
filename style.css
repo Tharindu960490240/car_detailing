@@ -378,7 +378,7 @@ nav.scrolled .brand-logo {
 .pb-icon {
   width: 16px;
   height: 16px;
-  color: #facc15;
+  color: var(--brand-gold);
   flex-shrink: 0;
 }
 .pb-copy {
@@ -387,7 +387,7 @@ nav.scrolled .brand-logo {
   font-weight: 400;
 }
 .pb-copy strong {
-  color: #facc15;
+  color: var(--brand-gold);
   font-weight: 500;
 }
 .pb-sep {
@@ -625,8 +625,17 @@ nav.scrolled .brand-logo {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
+.marquee-item svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--brand-gold);
+}
 @keyframes marquee {
   0% {
     transform: translateX(0);
