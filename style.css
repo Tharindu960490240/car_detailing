@@ -403,11 +403,11 @@ nav.scrolled .brand-logo {
    5. HERO SECTION
 ========================================= */
 #hero {
-  min-height: 100vh;
+  height: auto;
   position: relative;
   display: flex;
   align-items: flex-end;
-  padding: 0 5% clamp(3rem, 6vw, 5rem);
+  padding: 5% clamp(3rem, 6vw, 5rem);
   overflow: hidden;
 }
 
@@ -430,28 +430,6 @@ nav.scrolled .brand-logo {
     rgba(0, 19, 71, 0.55) 40%,
     rgba(0, 19, 71, 0.88) 100%
   );
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 80% 20%,
-    rgba(212, 175, 55, 0.12),
-    transparent 45%
-  );
-  z-index: 1;
-}
-
-.floating-glow {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  right: -50px;
-  top: 15%;
-  border-radius: 50%;
-  background: rgba(212, 175, 55, 0.03);
-  filter: blur(100px);
 }
 
 .hero-content {
@@ -840,16 +818,20 @@ nav.scrolled .brand-logo {
   gap: 1rem;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 
 .btn-action-small {
   padding: 0.65rem 1.25rem;
   font-size: 0.75rem;
+  min-width: 190px;
 }
 
 .btn-ghost-phone {
+  min-width: 190px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   color: #fff;
   text-decoration: none;
@@ -1281,6 +1263,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+  #hero {
+    height: 80vh;
+  }
   .scroll-to-top {
     bottom: 20px;
     right: 20px;
@@ -1388,6 +1373,7 @@ footer {
   .service-actions-wrap {
     flex-direction: column;
     align-items: stretch;
+    justify-content: center;
   }
 
   .service-actions-wrap .btn-primary,
